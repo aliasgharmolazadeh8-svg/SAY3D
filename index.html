@@ -1,0 +1,125 @@
+
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COSMORA | منظومه شمسی</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+
+  <script type="module" src="script.js"></script>
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">COSMO<span>RA</span></a>
+    <div class="status"><i></i> سیستم آماده است</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">BEYOND OUR WORLD</div>
+      <h1>به منظومه شمسی خوش آمدی.</h1>
+      <p>سیاره‌ها را کشف کن و به اعماق فضا سفر کن.</p>
+    </section>
+
+    <section class="layout">
+      <div class="scene glass" id="scene">
+        <div class="scene-top">
+          <span class="tag">◉ نمای سه‌بعدی منظومه شمسی</span>
+          <span class="tag" id="modeLabel">LIVE SIMULATION</span>
+        </div>
+
+        <div class="scene-help">
+          برای چرخاندن، بکش؛ برای انتخاب، روی سیاره کلیک کن
+        </div>
+
+        <div class="scene-actions">
+          <button class="icon-btn" id="resetView" title="نمای اولیه">⌂</button>
+          <button class="icon-btn" id="zoomIn" title="بزرگ‌نمایی">＋</button>
+          <button class="icon-btn" id="zoomOut" title="کوچک‌نمایی">−</button>
+        </div>
+      </div>
+
+      <aside class="sidebar glass">
+        <div class="section-title">
+          <h2>سیاره‌های منظومه</h2>
+          <span>۸ PLANETS</span>
+        </div>
+
+        <div class="planet-list" id="planetList"></div>
+
+        <div class="separator"></div>
+
+        <div class="section-title">
+          <h2>پرونده سیاره</h2>
+          <span>PLANET DATA</span>
+        </div>
+
+        <div class="detail-head">
+          <div id="detailPlanet" class="big-planet"></div>
+          <div>
+            <h2 id="detailName">زمین</h2>
+            <p id="detailEn">EARTH</p>
+          </div>
+        </div>
+
+        <div class="facts">
+          <div class="fact">
+            <label>طول یک سال</label>
+            <strong id="year">365.25 روز</strong>
+          </div>
+          <div class="fact">
+            <label>قطر سیاره</label>
+            <strong id="diameter">12,742 km</strong>
+          </div>
+          <div class="fact">
+            <label>فاصله از خورشید</label>
+            <strong id="distance">149.6 میلیون</strong>
+            <small>کیلومتر، میانگین</small>
+          </div>
+          <div class="fact">
+            <label>طول شبانه‌روز</label>
+            <strong id="day">23 ساعت و 56 دقیقه</strong>
+          </div>
+        </div>
+
+        <p class="description" id="description"></p>
+      </aside>
+    </section>
+
+    <section class="controls glass">
+      <div class="control">
+        <label for="speed">سرعت گردش</label>
+        <input id="speed" type="range" min="0" max="3" step=".1" value="1">
+        <strong id="speedValue" dir="ltr">1.0×</strong>
+      </div>
+
+      <div class="control">
+        <label for="orbitScale">مقیاس مدارها</label>
+        <input id="orbitScale" type="range" min=".7" max="1.5" step=".1" value="1">
+      </div>
+
+      <div class="control-buttons">
+        <button class="btn primary" id="pause">Ⅱ توقف حرکت</button>
+        <button class="btn" id="labels">مخفی کردن نام‌ها</button>
+      </div>
+    </section>
+
+    <footer>
+      COSMORA · سفری کوچک به دنیایی بی‌انتها
+      <br>
+      فاصله‌ها و اندازه‌های مدل سه‌بعدی نمایشی هستند.
+    </footer>
+  </main>
+</body>
+</html>
